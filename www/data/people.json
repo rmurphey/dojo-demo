@@ -1,0 +1,33 @@
+[
+  {
+    "id" : 1,
+    "name" : "Alex Sexton",
+    "twitter" : "SlexAxton",
+    "location" : "Austin, TX",
+    "img" : "img/alex.png"
+  },
+
+  {
+    "id" : 2,
+    "name" : "Paul Irish",
+    "twitter" : "paul_irish",
+    "location" : "San Francisco, CA",
+    "img" : "img/paul.png"
+  },
+
+  {
+    "id" : 3,
+    "name" : "Adam Sontag",
+    "twitter" : "ajpiano",
+    "location" : "New York, NY",
+    "img" : "img/adam.png"
+  },
+
+  {
+    "id" : 4,
+    "name" : "Rebecca Murphey",
+    "twitter" : "rmurphey",
+    "location" : "Durham, NC",
+    "img" : "img/rebecca.png"
+  }
+]

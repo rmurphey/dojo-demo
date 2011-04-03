@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <div id="container">
+    <div id="people"></div>
+    <div id="detail"></div>
+  </div>
+
+  <!--
+
+  uncomment this block to use a local dojo.js; note that you must
+  run the setup script at util/setup.sh in order for this to work.
+  note also that you'll need to remove the script tags that are currently
+  being used
+
+  <script>
+  var _dbpDev = true;
+  djConfig = _dbpDev ? {
+    modulePaths : {
+      app : "../../app"
+    }
+  } : {};
+  </script>
+  <script src="js/dojo-release-1.6.0-src/dojo/dojo.js"></script>
+
+  -->
+
+  <script>
+  var _dbpDev = true;
+  djConfig = _dbpDev ? {
+    baseUrl : './',
+    modulePaths : {
+      app : "js/app",
+      dbp : "js/dbp"
+    }
+  } : {};
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.6.0/dojo/dojo.xd.js"></script>
+  <script>
+    dojo.ready(function() {
+      dojo.require("app.base");
+    });
+  </script>
+</body>
+</html>

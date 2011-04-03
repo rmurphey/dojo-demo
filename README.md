@@ -1,7 +1,7 @@
 # Using the Dojo Toolkit for MVC JavaScript applications
 
 This is a repository based on the [Dojo
-Boilerplate]https://github.com/rmurphey/dojo-boilerplate/) for demonstrating
+Boilerplate](https://github.com/rmurphey/dojo-boilerplate/) for demonstrating
 simple MVC concepts using the [Dojo Toolkit](http://dojotoolkit.org).
 
 This repository is set up to work using a version of Dojo hosted on the Google

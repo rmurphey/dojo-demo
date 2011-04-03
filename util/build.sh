@@ -38,6 +38,5 @@ cp -r "$CSSDIR" "$DISTDIR/css"
 # copy the index.html and make it production-friendly
 cp "$SRCDIR/index.html" "$DISTDIR/index.html"
 
-
 sed -i -e "s/var _dbpDev = true;//" "$DISTDIR/index.html"
-sed -i -e "s/js\/dojo-release-1.6.0-src/dist/" "$DISTDIR/index.html"
+sed -i -e "s/js\/dojo-release-1.6.0-src/js/" "$DISTDIR/index.html"

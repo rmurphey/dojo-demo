@@ -5,7 +5,6 @@ dojo.require('dojo.string');
 
 app.services.Twitter = {
   tweets : function(username) {
-    console.log('username is', username);
     var url = 'http://twitter.com/status/user_timeline/' + username + '.json',
         dfd = new dojo.Deferred();
 

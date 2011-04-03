@@ -23,7 +23,6 @@ app.services.YQL = {
           q : 'select * from weather.forecast where location=' + zip
         },
         load : function(data) {
-          console.log('loaded weather', data);
           dfd.resolve(data.query.results.channel.item);
         }
       });
@@ -40,7 +39,6 @@ app.services.YQL = {
         q : 'select * from geo.placefinder where text="' + location + '"'
       },
       load : function(data) {
-        console.log('loaded location data', data);
         dfd.resolve(data.query.results.Result.uzip);
       }
     });

@@ -12,8 +12,23 @@
     <div id="detail"></div>
   </div>
 
-  <!--
+  <script>
+  dojoConfig = {
+    // when we're using a version of dojo that's hosted on a cdn, we
+    // need to specify a baseUrl, which is the URL on which all
+    // module paths are based. here, we say that the baseUrl is the
+    // location of the index.html file itself; then we say that modules
+    // in the "app" namespace will be found in the js/app dir, relative
+    // to the baseUrl.
+    baseUrl : './',
+    modulePaths : {
+      app : "js/app"
+    }
+  };
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.6.0/dojo/dojo.xd.js"></script>
 
+  <!--
   uncomment this block to use a local dojo.js; note that you must
   run the setup script at util/setup.sh in order for this to work.
   note also that you'll need to remove the script tags that are currently
@@ -22,27 +37,23 @@
   <script>
   var _dbpDev = true;
   dojoConfig = _dbpDev ? {
+    // when we use a local version of dojo, we don't need to specify
+    // a baseUrl like we do when we use a cdn-hosted dojo. the base
+    // url is set to be the location of the dojo.js script itself.
+    // we do, however, have to tell dojo where to find modules in
+    // non-dojo namespaces. for the "app" namespace, we indicate the
+    // location of the app directory relative to dojo.js.
     modulePaths : {
       app : "../../app"
     }
   } : {};
   </script>
   <script src="js/dojo-release-1.6.0-src/dojo/dojo.js"></script>
-
   -->
 
   <script>
-  var _dbpDev = true;
-  dojoConfig = _dbpDev ? {
-    baseUrl : './',
-    modulePaths : {
-      app : "js/app",
-      dbp : "js/dbp"
-    }
-  } : {};
-  </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.6.0/dojo/dojo.xd.js"></script>
-  <script>
+    // this stays the same regardless of whether we're using a hosted
+    // dojo.js or a local version
     dojo.ready(function() {
       dojo.require("app.base");
     });

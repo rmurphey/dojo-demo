@@ -8,7 +8,8 @@ This repository is set up to work using a version of Dojo hosted on the Google
 CDN. If you'd prefer to use a local version of Dojo -- or if you're interested
 in trying out the build script at `util/build.sh` -- you'll need to run the
 setup script at `util/setup.sh` to download the full Dojo SDK. You'll also need
-to
+to follow the instructions regarding commenting and uncommenting script files
+in `www/index.html`.
 
 # Useful resources
 

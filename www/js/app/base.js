@@ -41,6 +41,8 @@ dojo.provide('app.base');
  * application's dependencies in this one file; individual files
  * can express their own dependencies as well.
  */
+
+dojo.require('dbp.Router');
 dojo.require('app.controllers.People');
 
 /**
@@ -48,4 +50,21 @@ dojo.require('app.controllers.People');
  * should be passed inside a function to dojo.ready. If you're
  * making a single-page app, this is your application controller.
  */
-dojo.ready(app.controllers.People.init);
+dojo.ready(function() {
+  var router = new dbp.Router([
+    {
+      path : "/user/:id",
+      handler : function(params) {
+        app.controllers.People.set('personId', params.id);
+      }
+    },
+
+    {
+      path : "/",
+      handler : function() {},
+      defaultRoute : true
+    }
+  ]);
+
+  app.controllers.People.init().then(dojo.hitch(router, 'init'));
+});

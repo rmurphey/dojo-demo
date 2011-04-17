@@ -9,6 +9,8 @@ SRCDIR="$THISDIR/../www"
 UTILDIR="$SRCDIR/js/dojo-release-${DOJOVERSION}-src/util/buildscripts"
 PROFILE="$THISDIR/../profiles/app.js"
 CSSDIR="$SRCDIR/css"
+DATADIR="$SRCDIR/data"
+IMGDIR="$SRCDIR/img"
 DISTDIR="$THISDIR/../dist"
 
 if [ ! -d "$UTILDIR" ]; then
@@ -21,7 +23,7 @@ if [ ! -f "$PROFILE" ]; then
   exit 1
 fi
 
-echo "Using $PROFILE. CSS will be copied and JS will be built."
+echo "Using $PROFILE. CSS, DATA and IMG will be copied and JS will be built."
 
 # clean the old distribution files
 rm -rf "$DISTDIR"
@@ -31,9 +33,11 @@ cd "$UTILDIR"
 ./build.sh profileFile=../../../../../profiles/app.js releaseDir=../../../../../dist/
 cd "$THISDIR"
 
-# copy the css files
+# copy the css, data and img files
 # todo: how to do this better?
 cp -r "$CSSDIR" "$DISTDIR/css"
+cp -r "$DATADIR" "$DISTDIR/data"
+cp -r "$IMGDIR" "$DISTDIR/img"
 
 # copy the index.html and make it production-friendly
 cp "$SRCDIR/index.html" "$DISTDIR/index.html"

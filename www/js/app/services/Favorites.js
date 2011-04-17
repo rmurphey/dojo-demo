@@ -24,10 +24,6 @@ dojo.require('dojo.store.Memory');
       });
     },
 
-    isFavorite : function(id) {
-      return !!this.get(id);
-    },
-
     put : function() {
       this.inherited(arguments);
       this._save();

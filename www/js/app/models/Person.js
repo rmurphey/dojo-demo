@@ -20,7 +20,7 @@ dojo.declare('app.models.Person', [], {
   },
 
   isFavorite : function() {
-    return !!app.services.Favorites.isFavorite(this.data.id);
+    return !!app.services.Favorites.get(this.data.id);
   }
 });
 

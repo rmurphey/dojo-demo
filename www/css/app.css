@@ -108,3 +108,9 @@ h3 {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+h1 span {
+  font-size: 50%;
+  font-weight: normal;
+  cursor: pointer;
+}

@@ -8,6 +8,11 @@ dojo.declare('app.views.Person', [ dijit._Widget, dijit._Templated ], {
   tweetTemplate : dojo.cache('app.views', 'Person/Tweet.html'),
   weatherTemplate : dojo.cache('app.views', 'Person/Weather.html'),
 
+  postMixInProperties : function() {
+    this.isFavorite = this.person.isFavorite();
+    this.favoriteText = this.isFavorite ? 'unfavorite' : 'favorite';
+  },
+
   postCreate : function() {
     // templated widgets can refer to a specific element in their template by
     // adding a dojoAttachPoint attribute to the element. so, for example, if a
@@ -23,7 +28,15 @@ dojo.declare('app.views.Person', [ dijit._Widget, dijit._Templated ], {
     // three elements in the template
 
     dojo.forEach([ 'latestTweet', 'olderTweets', 'weather' ], function(n) {
-    dojo.addClass(this[n], 'loading'); }, this); },
+    dojo.addClass(this[n], 'loading'); }, this);
+    this.connect(this.favorite, 'click', '_handleFavorite');
+  },
+
+  _handleFavorite : function() {
+    dojo.publish('/favorites/' + (this.isFavorite ? 'remove' : 'add'), [ this.person.data ]);
+    this.isFavorite = !this.isFavorite;
+    this.favorite.innerHTML = this.isFavorite ? 'unfavorite' : 'favorite';
+  },
 
   _setTweetsAttr : function(tweets) {
     // this method will be called when .set('tweets', someValue) is called on

@@ -44,6 +44,7 @@ dojo.provide('app.base');
 
 dojo.require('dbp.Router');
 dojo.require('app.controllers.People');
+dojo.require('app.services.Favorites');
 
 /**
  * Any functionality that depends on the DOM being available
